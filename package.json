@@ -31,6 +31,11 @@
         "type": "before-watch",
         "script": "lib/watch.js",
         "inject": true
+      },
+      {
+        "type": "after-watch",
+        "script": "lib/after-watch.js",
+        "inject": true
       }
     ],
     "tns-ios": {

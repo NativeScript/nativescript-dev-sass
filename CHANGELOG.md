@@ -1,3 +1,6 @@
+## v1.3.0
+- Merged #40 to improve behavior when used with LiveSync (critical for use with Sidekick tooling)
+
 ## v1.2.0
 - Merged #35 to enable support for `tns prepare` with `--path` option (Fixes #34)
 - Added additional example to demo project
