@@ -21,6 +21,11 @@ var watcherOptions = {
 
 watcher = choki.watch('**/*.s[ac]ss', watcherOptions)
     .on('all', (event, filePath) => {
+        // Workaround for false matches from chokidar
+        if (!filePath.match(/\.s[ac]ss$/i)) {
+            return;
+        }
+
         watchPromisesChain = watchPromisesChain
             .then(() => compiler.compile({appDir, projectDir}))
             .catch(err => {
