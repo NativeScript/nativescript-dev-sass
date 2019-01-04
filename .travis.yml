@@ -8,6 +8,9 @@ matrix:
       language: node_js
       node_js: "10"
       jdk: oraclejdk8
+      language: ruby
+      rvm:
+        - 2.3.7
       script: cd src && npm i && cd ../demo && npm i && tns build ios --bundle --env.uglify && cd ../demo-angular && npm i && tns build ios --bundle --env.uglify --env.aot
     - language: android
       os: linux
@@ -32,6 +35,9 @@ matrix:
       language: node_js
       node_js: "10"
       jdk: oraclejdk8
+      language: ruby
+      rvm:
+        - 2.3.7
       script:
         - cd src && npm i && cd ../demo && tns build ios && cd ../demo-angular && tns build ios
 
