@@ -8,6 +8,7 @@ matrix:
   include:
     - stage: "WebPack, Build and Test"
       os: osx
+      jdk: openjdk8
       env:
         - WebPack="iOS"
         - BuildiOS="12.1"
@@ -18,7 +19,6 @@ matrix:
       language: ruby
       rvm:
         - 2.3.7
-      jdk: oraclejdk8
       script: cd src && npm i && cd ../demo && npm i && tns build ios --bundle --env.uglify && cd ../demo-angular && npm i && tns build ios --bundle --env.uglify --env.aot
     - language: android
       os: linux
@@ -36,6 +36,7 @@ matrix:
       script:
         - cd src && npm i && cd ../demo && tns build android && cd ../demo-angular && tns build android
     - os: osx
+      jdk: openjdk8
       env:
         - WebPack="iOS"
         - BuildiOS="12.1"
@@ -46,7 +47,6 @@ matrix:
       language: ruby
       rvm:
         - 2.3.7
-      jdk: oraclejdk8
       script:
         - cd src && npm i && cd ../demo && tns build ios && cd ../demo-angular && tns build ios
 
