@@ -8,7 +8,6 @@ matrix:
   include:
     - stage: "WebPack, Build and Test"
       os: osx
-      jdk: openjdk8
       env:
         - WebPack="iOS"
         - BuildiOS="12.1"
@@ -36,7 +35,6 @@ matrix:
       script:
         - cd src && npm i && cd ../demo && tns build android && cd ../demo-angular && tns build android
     - os: osx
-      jdk: openjdk8
       env:
         - WebPack="iOS"
         - BuildiOS="12.1"
