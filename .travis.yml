@@ -1,18 +1,23 @@
 branches:
   only: 
     - master
+env:
+  global:
+    - TERM=dumb
 matrix:
   include:
     - stage: "WebPack, Build and Test"
       os: osx
       env:
         - WebPack="iOS"
+        - BuildiOS="12.1"
+        - Xcode="10.1"
       osx_image: xcode10.1
+      language: node_js
+      node_js: "10"
       language: ruby
       rvm:
         - 2.3.7
-      language: node_js
-      node_js: "10"
       jdk: oraclejdk8
       script: cd src && npm i && cd ../demo && npm i && tns build ios --bundle --env.uglify && cd ../demo-angular && npm i && tns build ios --bundle --env.uglify --env.aot
     - language: android
@@ -32,14 +37,15 @@ matrix:
         - cd src && npm i && cd ../demo && tns build android && cd ../demo-angular && tns build android
     - os: osx
       env:
-        - BuildiOS="12"
+        - WebPack="iOS"
+        - BuildiOS="12.1"
         - Xcode="10.1"
       osx_image: xcode10.1
+      language: node_js
+      node_js: "10"
       language: ruby
       rvm:
         - 2.3.7
-      language: node_js
-      node_js: "10"
       jdk: oraclejdk8
       script:
         - cd src && npm i && cd ../demo && tns build ios && cd ../demo-angular && tns build ios
