@@ -4,7 +4,7 @@ module.exports = function (logger, projectData, usbLiveSyncService, hookArgs) {
 	if (hookArgs.config) {
 		const appFilesUpdaterOptions = hookArgs.config.appFilesUpdaterOptions;
 		if (appFilesUpdaterOptions.bundle) {
-			logger.warn("Hook skipped because bundling is in progress.")
+			logger.trace("Hook skipped because bundling is in progress.")
 			return;
 		}
 	}

@@ -15,12 +15,12 @@ function compile(data) {
 	return new Promise((res, rej) => {
 		var projectDir = data.projectDir,
 			appDir = data.appDir;
-		
+
 		var logger = new LogProvider(data.logger);
 
 		var sassPath = require.resolve('node-sass/bin/node-sass');
 		if (fs.existsSync(sassPath)) {
-			logger.info("Found peer node-sass");
+			logger.trace("Found peer node-sass");
 		} else {
 			isResolved = true;
 			rej(new Error('node-sass installation local to project was not found. Install by executing `npm install node-sass`.'));
