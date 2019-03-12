@@ -1,3 +1,6 @@
+## v1.7.0
+- Non-meaningful messages are printed in the default output
+
 ## v1.6.1
 - Fixed symlinked directories causing infinite compile loop
 
