@@ -1,6 +1,8 @@
 # SASS CSS pre-processor for NativeScript projects
 [![npm version](https://badge.fury.io/js/nativescript-dev-sass.svg)](https://badge.fury.io/js/nativescript-dev-sass)
 
+## `nativescript-dev-sass` is deprecated in favour of  `bundle` workflow, which will be introduced with CLI v6.0. More info about the upcoming new approach can be found [here](https://www.nativescript.org/blog/the-future-of-building-nativescript-apps). 
+
 This plugin uses the [node-sass compiler](https://www.npmjs.com/package/node-sass) to transpile SCSS files to CSS files in [NativeScript](https://www.nativescript.org/) projects.
 
 <!-- TOC depthFrom:2 -->
